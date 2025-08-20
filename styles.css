@@ -1,0 +1,380 @@
+html,
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    box-sizing: border-box; /* Ensure box-sizing is applied globally */
+}
+
+header.hero {
+    position: relative;
+    background: url('https://images.pexels.com/photos/355328/pexels-photo-355328.jpeg?cs=srgb&dl=pexels-pixabay-355328.jpg&fm=jpg') no-repeat center center/cover;
+    height: 100vh; /* Set to 100% of the viewport height */
+    text-align: center;
+    color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem; /* Add padding for smaller screens */
+}
+
+header.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+header.hero h1 {
+    position: relative;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 4rem;
+    font-weight: bold;
+    background: linear-gradient(to bottom, white, #0099cc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    z-index: 1;
+}
+nav {
+    position: fixed; /* Fixed positioning */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* Make sure it's on top of other elements */
+    background-color: rgba(0, 0, 0, 0.7); /* Dark transparent background */
+    color: white;
+    padding: 1rem 0; /* Spacing for the navbar */
+    display: flex;
+    justify-content: center;
+}
+
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 1.5rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #0099cc;
+}
+
+.introduction h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+    color: #063666;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.introduction p {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.8;
+    margin-top: 1rem;
+}
+
+.attractions {
+    display: flex; /* Use flexbox for a vertical layout */
+    flex-direction: column; /* Stack the heading and the cards vertically */
+    align-items: flex-start; /* Center the items horizontally */
+    padding: 2rem;
+    margin: 0 auto;
+    gap: 2rem; /* Space between the heading and the cards */
+}
+
+.attractions h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #063666;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    margin-left: 2rem;
+}
+
+/* Card container */
+.attractions-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap onto new lines */
+    gap: 1.5rem; /* Space between the cards */
+    justify-content: flex-start; /* Align items to the left */
+    margin: 0 auto; /* Center the container */
+    width: 100%; /* Ensure it takes up full width */
+}
+
+/* Each card */
+.attraction-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #fdfdfd;
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: calc(50% - 1.5rem); /* Ensure cards are side by side */
+    margin-bottom: 0.5rem;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.attraction-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 0; /* Remove margin-top if any */
+    margin-bottom: 1rem; /* You can adjust this if you want further space control */
+}
+
+/* Image inside the card */
+.attraction-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+}
+
+/* Hover effect on the card */
+.attraction-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.culture {
+    display: flex; /* Use flexbox for a vertical layout */
+    flex-direction: column; /* Stack the heading and the cards vertically */
+    align-items: flex-start; /* Center the items horizontally */
+    padding: 2rem;
+    margin: 0 auto;
+    gap: 2rem;
+}
+.culture h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #063666;
+    text-align: left;
+    margin-bottom: 1.5rem;
+    margin-left: 2rem;
+}
+.culture-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap onto new lines */
+    gap: 1.5rem; /* Space between the cards */
+    justify-content: flex-start; /* Align items to the left */
+    margin: 0 auto; /* Center the container */
+    width: 100%; /* Ensure it takes up full width */
+}
+.culture-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #fdfdfd;
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: calc(50% - 1.5rem); /* Ensure cards are side by side */
+    margin-bottom: 0.5rem;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.culture-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 0; /* Remove margin-top if any */
+    margin-bottom: 1rem; /* You can adjust this if you want further space control */
+}
+.culture-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+}
+
+/* Hover effect on the card */
+.culture-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cuisine {
+    display: flex; /* Use flexbox for a vertical layout */
+    flex-direction: column; /* Stack the heading and the cards vertically */
+    align-items: flex-start; /* Center the items horizontally */
+    padding: 2rem;
+    margin: 0 auto;
+    gap: 2rem;
+}
+.cuisine h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #063666;
+    text-align: left;
+    margin-bottom: 1.5rem;
+    margin-left: 2rem;
+}
+.cuisine-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap onto new lines */
+    gap: 1.5rem; /* Space between the cards */
+    justify-content: flex-start; /* Align items to the left */
+    margin: 0 auto; /* Center the container */
+    width: 100%; /* Ensure it takes up full width */
+}
+.cuisine-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #fdfdfd;
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: calc(50% - 1.5rem); /* Ensure cards are side by side */
+    margin-bottom: 0.5rem;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.cuisine-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 0; /* Remove margin-top if any */
+    margin-bottom: 1rem; /* You can adjust this if you want further space control */
+}
+.cuisine-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+}
+
+/* Hover effect on the card */
+.cuisine-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.travel-tips h2{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #063666;
+    text-align: left;
+    margin-bottom: 1.5rem;
+    margin-left: 2rem;
+}
+
+
+section {
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+
+.cta-button {
+    background: #028090;
+    color: rgb(231, 12, 12);
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #02697b;
+}
+
+
+@media (max-width: 768px) {
+    .attraction-card, .culture-card, .cuisine-card {
+        width: 90%; 
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack the navigation items vertically */
+        align-items: center; /* Center the items */
+    }
+
+    nav ul li {
+        margin: 1rem 0; /* Space out the navigation items */
+    }
+
+    nav ul li a {
+        font-size: 1.1rem; /* Slightly smaller font size for mobile */
+        padding: 1rem 2rem; /* Increase padding for easier clicking */
+    }
+}
+
+
+
+/* Footer background styling */
+footer.footer-cta {
+    background-color: #028090;  /* Footer background color */
+    padding: 0.5rem;              /* Padding around footer */
+    color:rgb(161, 238, 230);    /* Text color */
+    text-align: center;         /* Center-align the content */
+}
+
+
+/* Styling for the call to action button */
+footer.footer-cta .cta-button {
+    color: #fff;                  /* Button text color */
+    text-decoration: none;         /* Remove underline */
+    font-weight: bold;             /* Bold text */
+    padding: 0.5rem 1.5rem;        /* Button padding */
+    background-color: rgb(9, 194, 175);    /* Button background color */
+    border-radius: 5px;            /* Rounded button corners */
+    transition: background-color 0.3s ease;  /* Smooth hover effect */
+}
+
+/* Hover effect for the button */
+footer.footer-cta .cta-button:hover {
+    background-color: #026b74;    /* Darker color on hover */
+}
+
+/* Styling for the heading */
+footer.footer-cta h2 {
+    margin-bottom: 1rem;   /* Space below the heading */
+}
+
+
+h1, h2 {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
